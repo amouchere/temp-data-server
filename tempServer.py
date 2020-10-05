@@ -25,7 +25,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         self.end_headers()
         logging.info("GET request")
         self.wfile.write(b'Get request succeed')
-#
+
     def do_POST(self):
         content_length = int(self.headers['Content-Length'])
         body = self.rfile.read(content_length)
@@ -61,9 +61,7 @@ def add_measures(key, value, location):
                 }
             }
     points.append(point)
-
     client.write_points(points)
-
 
 
 logging.info("TempServer starting..")
