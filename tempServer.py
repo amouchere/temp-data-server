@@ -23,9 +23,8 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
         self.end_headers()
-        logging.info("test GET ")
-#        client.drop_database(db)
-        self.wfile.write(b'Database dropped')
+        logging.info("GET request")
+        self.wfile.write(b'Get request succeed')
 #
     def do_POST(self):
         content_length = int(self.headers['Content-Length'])
